@@ -1,5 +1,6 @@
 package model;
 
+import enums.StudyProfile;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
