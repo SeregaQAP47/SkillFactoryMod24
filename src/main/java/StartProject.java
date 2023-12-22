@@ -3,13 +3,17 @@ import comparator.interfaces.StudentComparator;
 import comparator.interfaces.UniversityComparator;
 import enums.StudentComparatorType;
 import enums.UniversityComparatorType;
+import model.Statistics;
 import model.Student;
 import model.University;
 import util.JsonUtil;
 import util.ReaderExcel;
+import util.XlsWriter;
 
 import java.io.IOException;
 import java.util.List;
+
+import static util.StatisticsUtil.createStatistics;
 
 public class StartProject {
 
@@ -46,5 +50,9 @@ public class StartProject {
             Student studentFromJson = JsonUtil.jsonToStudent(studentJson);
             System.out.println(studentFromJson);
         });
+
+        List<Statistics> statisticsList = createStatistics(students, universities);
+        XlsWriter.writeStatistic(statisticsList, "statistics.xlsx");
     }
+
 }
