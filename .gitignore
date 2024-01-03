@@ -1,2 +1,4 @@
 /.idea/
 /target/
+/src/test/java/MyTest.java
+/src/test/java/Example.java
